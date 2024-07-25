@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('investments', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('login_id');
+            $table->foreign('login_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('plan_id');
+            $table->foreign('plan_id')->references('id')->on('plan_infos')->onDelete('cascade');
+            $table->decimal('investment_amount',10,2);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->nullable()->useCurrentOnUpdate();
+
         });
     }
 
