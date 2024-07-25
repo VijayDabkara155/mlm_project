@@ -17,7 +17,9 @@ return new class extends Migration
             $table->decimal('range_from',10,2);
             $table->decimal('range_to',10,2);
             $table->decimal('return_per',3,1);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->nullable()->useCurrentOnUpdate();
+
         });
     }
 
