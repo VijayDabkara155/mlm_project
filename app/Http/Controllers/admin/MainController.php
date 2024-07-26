@@ -10,4 +10,8 @@ class MainController extends Controller
     function dashboard(){
         return view('admin.dashboard');
     }
+    function admin_login(){
+        return view('admin.login');
+    }
+    
 }
