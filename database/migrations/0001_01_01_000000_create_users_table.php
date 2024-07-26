@@ -17,7 +17,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('mobile',15);
+            $table->string('mobile',15)->unique();
+            $table->decimal('wallet_balance',10,8);
+            $table->decimal('referral_income',10,8);
+            $table->decimal('daily_income',10,8);
+            $table->unsignedBigInteger('plan_id');
+            $table->foreign('plan_id')->references('id')->on('plan_infos')->onDelete('cascade');
             $table->string('reffrel_code',6)->nullable();
             $table->enum('role',["0","1"])->default("1")->comment("0=admin and 1=user");
             $table->rememberToken();
