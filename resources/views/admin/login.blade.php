@@ -36,7 +36,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="{{route('admin.login.submit')}}" method="post">
+    <form action="" method="post">
       @csrf
       @if(Session::has('message'))
         <p class="alert alert-danger">{{Session::get('message')}}</p>

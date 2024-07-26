@@ -21,4 +21,6 @@ use App\Http\Controllers\admin\MainController;
 Route::get('dashboard',[MainController::class,'dashboard'])->name('dashboard_view');
 
 Route::get('admin_login',[MainController::class,'admin_login'])->name('admin_login_view');
+Route::post('admin_login_check',[MainController::class,'admin_login_check'])->name('admin_login_chech');
+
 

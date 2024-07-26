@@ -13,5 +13,12 @@ class MainController extends Controller
     function admin_login(){
         return view('admin.login');
     }
+    function admin_login_check(Request $request){
+        $request->validate([
+            'email'=>'email|required',
+            'password'=>'required',
+            'mobile'=> 'required|max:11|numeric'
+        ]);
+    }
     
 }
