@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     function dashboard(){
-        return view('admin.dashboard');
+        
     }
     function admin_login(){
         return view('admin.login');
@@ -19,6 +19,7 @@ class MainController extends Controller
             'password'=>'required',
             'mobile'=> 'required|max:11|numeric'
         ]);
+        return view('admin.dashboard');
     }
     
 }
